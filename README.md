@@ -72,9 +72,9 @@ finclusion/
 ├── app/
 │   └── main.py                     ← Streamlit web app (entry point)
 │
-├----Project-Overview-document          <-----------(Iilustrated Document)
+|
 │-----Project-Overview-document-Google-docs <------------------(Simplified Document)   
-│
+│----Project-Overview-updated          <-----------(Iilustrated Document)
 ├── requirements.txt                ← All Python dependencies
 └── README.md
 ```
