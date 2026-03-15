@@ -72,8 +72,8 @@ finclusion/
 ├── app/
 │   └── main.py                     ← Streamlit web app (entry point)
 │
-├── notebooks/
-│   └── exploration.py              ← Data exploration & visualisations
+├── notebooks
+│   
 │
 ├── requirements.txt                ← All Python dependencies
 └── README.md
