@@ -180,7 +180,7 @@ os.makedirs(output_dir, exist_ok=True)
 df.to_csv(output_path, index=False)
 
 # ── Summary ───────────────────────────────────────────────────────────────────
-print(f"\n✅  Dataset saved → {output_path}")
+print(f"\n Dataset saved → {output_path}")
 print(f"    Rows   : {len(df):,}")
 print(f"    Columns: {list(df.columns)}\n")
 print("── Label distribution ─────────────────────────────────")
