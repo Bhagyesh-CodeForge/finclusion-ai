@@ -22,7 +22,7 @@ def load_data(filepath: str = RAW_PATH) -> pd.DataFrame:
         raise FileNotFoundError(f"Dataset not found at: {filepath}\n"
                                 "Run  python data/generate_dataset.py  first.")
     df = pd.read_csv(filepath)
-    print(f"✅  Loaded  {len(df):,} rows  |  {df.shape[1]} columns")
+    print(f"Loaded  {len(df):,} rows  |  {df.shape[1]} columns")
     return df
 
 
@@ -41,7 +41,7 @@ def clean_data(df: pd.DataFrame) -> pd.DataFrame:
         df[numeric_cols] = df[numeric_cols].fillna(df[numeric_cols].median())
         print(f"   Filled {missing} missing numeric values with column medians")
 
-    print(f"✅  Cleaned  →  {len(df):,} rows remaining")
+    print(f"Cleaned  →  {len(df):,} rows remaining")
     return df
 
 
@@ -60,7 +60,7 @@ def engineer_features(df: pd.DataFrame) -> pd.DataFrame:
     # Monthly income — total estimated monthly earning
     df["monthly_income"] = df["daily_income"] * df["work_days_per_month"]
 
-    print("✅  Engineered features: income_consistency, monthly_income")
+    print("Engineered features: income_consistency, monthly_income")
     return df
 
 
@@ -75,7 +75,7 @@ def encode_categoricals(df: pd.DataFrame) -> pd.DataFrame:
     df["occupation"] = le.fit_transform(df["occupation"])
 
     mapping = dict(zip(le.classes_, le.transform(le.classes_)))
-    print(f"✅  Encoded 'occupation'  →  {mapping}")
+    print(f"Encoded 'occupation'  →  {mapping}")
     return df
 
 
@@ -87,7 +87,7 @@ def encode_target(df: pd.DataFrame) -> pd.DataFrame:
     """
     label_map = {"unstable": 0, "moderate": 1, "stable": 2}
     df["financial_stability"] = df["financial_stability"].map(label_map)
-    print(f"✅  Encoded target  →  {label_map}")
+    print(f"Encoded target  →  {label_map}")
     return df
 
 
@@ -109,7 +109,7 @@ def normalize_features(df: pd.DataFrame, feature_cols: list = FEATURE_COLS):
     scaler = MinMaxScaler()
     df = df.copy()
     df[feature_cols] = scaler.fit_transform(df[feature_cols])
-    print(f"✅  Normalized {len(feature_cols)} numerical features with MinMaxScaler")
+    print(f"Normalized {len(feature_cols)} numerical features with MinMaxScaler")
     return df, scaler
 
 
@@ -118,7 +118,7 @@ def save_processed(df: pd.DataFrame, path: str = PROCESSED_PATH):
     """Save the processed DataFrame to CSV."""
     os.makedirs(os.path.dirname(path), exist_ok=True)
     df.to_csv(path, index=False)
-    print(f"✅  Saved processed dataset  →  {path}")
+    print(f"Saved processed dataset  →  {path}")
 
 
 # ── Full Pipeline ─────────────────────────────────────────────────────────────
