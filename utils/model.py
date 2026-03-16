@@ -38,7 +38,7 @@ def load_processed(path: str = PROCESSED_PATH):
     df = pd.read_csv(path)
     X  = df.drop(columns=[TARGET_COL])
     y  = df[TARGET_COL]
-    print(f"✅  Loaded processed data  →  {X.shape[0]:,} rows | {X.shape[1]} features")
+    print(f"Loaded processed data  →  {X.shape[0]:,} rows | {X.shape[1]} features")
     return X, y
 
 
@@ -104,7 +104,7 @@ def train_and_select(X, y):
 
     # Auto-select best by accuracy
     best = max(results, key=lambda r: r["accuracy"])
-    print(f"\n🏆  Best model → {best['name']}  (accuracy: {best['accuracy'] * 100:.2f}%)")
+    print(f"\n Best model → {best['name']}  (accuracy: {best['accuracy'] * 100:.2f}%)")
     return best["model"], best["name"], best["accuracy"]
 
 
@@ -113,7 +113,7 @@ def save_model(model, path: str = MODEL_PATH):
     """Persist trained model to disk."""
     os.makedirs(os.path.dirname(path), exist_ok=True)
     joblib.dump(model, path)
-    print(f"✅  Model saved  →  {path}")
+    print(f"Model saved  →  {path}")
 
 
 def load_model(path: str = MODEL_PATH):
