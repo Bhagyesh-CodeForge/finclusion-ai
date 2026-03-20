@@ -254,7 +254,7 @@ The synthetic dataset contains **5,000 rows** generated with realistic occupatio
 | Phase | Status | Description |
 |---|---|---|
 | POC | ✅ Complete | Synthetic data, trained model, Streamlit prototype, explainability |
-| Pilot | 🔜 Next | Partner with MFI/NGO, collect real worker data, retrain on 50k+ records |
+| Pilot | 🔜 Next | Partner with MFI/NGO, collect real worker data |
 | Regional Scale | 📋 Planned | Multilingual UI (Hindi, Urdu, Bengali), REST API, mobile PWA |
 | National Scale | 📋 Planned | Federated learning, Aadhaar integration, cloud deployment |
 
